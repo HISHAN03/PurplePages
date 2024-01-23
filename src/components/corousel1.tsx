@@ -1,4 +1,4 @@
-import Img from "../static/ban1.jpeg";
+import Img from "../static/cover.jpeg";
 import Image from "next/image"; 
 
 export default function car1()
