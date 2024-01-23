@@ -8,7 +8,7 @@ export default function Card()
   const products = getProductList();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [categoryHeading, setCategoryHeading] = useState("All Categories");
-  const handleCategoryChange = (event) => {
+  const handleCategoryChange = (event:any) => {
     const category = event.target.value;
     
     setSelectedCategory(category);
@@ -29,7 +29,7 @@ export default function Card()
         setCategoryHeading("All Categories");
     }};
 
-  const handleBuyNow = (productId) => {
+  const handleBuyNow = (productId:Number) => {
     router.push(`/art/${productId}`);
 
   };
