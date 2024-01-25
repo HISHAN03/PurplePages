@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 
-export default function delet() {
-  const router = useRouter();
+
+export default function Delet() {
+
   const [arts, setArts] = useState<Array<{ _id: any, ImgLink: string, ImgName: string, ImgPrice: number, ImgCategory: string }>>([]);
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
@@ -30,9 +30,7 @@ export default function delet() {
     fetchData();
   }, []);
 
-  const handleUpdate = (artId: any) => {
-    router.push(`/update/${artId}`);
-  };
+
 
   const handleDelete = async (artId: any) => {
     try {
