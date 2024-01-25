@@ -50,7 +50,7 @@ export default function Art() {
             <p className="text-gray-700">{arts.ImgPrice}</p>
 
             <Link href={`https://wa.me/919019164209?text=Hello,+I+am+interested+in+buying+${encodeURIComponent(arts.ImgName)}.`} passHref>
-                <button className="btn btn-primary mt-4" target="_blank" rel="noopener noreferrer">
+                <button className="btn btn-primary mt-4" rel="noopener noreferrer">
                   Click to Buy
                 </button>
               </Link>
