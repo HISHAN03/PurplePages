@@ -2,10 +2,10 @@ const getProductList = () => {
   const products = [
     {
       id: 1,
-      shoeName: 'Classic Sneakers',
+      shoeName: 'Classic Light',
       description: 'Timeless sneakers for everyday comfort.',
       category: 'Casual',
-      imageUrl: 'https://rukminim2.flixcart.com/image/832/832/xif0q/poster/r/u/h/medium-anime-scenery-beautiful-nature-dreamworld-anime-aesthetic-original-imagkzhgyynhwybf.jpeg?q=70&crop=false  ', // Leave blank for now, replace with actual image source
+      imageUrl: 'https://i.pinimg.com/736x/f7/72/b9/f772b921af90d567c1bd1b17ea35a1b5.jpg', // Leave blank for now, replace with actual image source
     },
     {
       id: 2,
