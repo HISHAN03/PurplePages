@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+
 
 export default function Add() {
+  const router = useRouter();
   const [password, setPassword] = useState('');
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [imgLink, setImgLink] = useState('');
@@ -40,6 +43,7 @@ export default function Add() {
       // Handle the response as needed
       if (response.ok) {
         console.log('Art submitted successfully');
+        alert('Art added successfully!');
         // You may want to redirect or show a success message here
       } else {
         console.error('Error submitting art:', response.statusText);
@@ -48,6 +52,11 @@ export default function Add() {
     } catch (error) {
       console.error('Error submitting art:', error);
     }
+  };
+
+
+  const handleGoBack = () => {
+    router.push('/');
   };
   return isPasswordCorrect ? (
     <div className="flex items-center justify-center h-screen">
@@ -114,6 +123,12 @@ export default function Add() {
             </button>
           </div>
         </form>
+        <div className="card-body">
+
+            <button className="btn btn-primary" onClick={handleGoBack}>
+              Go Back
+            </button>
+        </div>
       </div>
     </div>
   ) : null;

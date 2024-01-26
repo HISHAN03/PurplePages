@@ -3,10 +3,13 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { useEffect, useState } from "react";
 import Link from 'next/link';
+import LoadingSpinner from "@/components/LoadingSpinner";
 export default function Art() {
+
   const [arts, setArts] = useState<{ _id: any, ImgLink: string, ImgName: string, ImgPrice: number,ImgCategory:string }>();
-  const router = useRouter();
+  const router = useRouter(); 
   const { id } = router.query;
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const find = async () => {
@@ -19,7 +22,9 @@ export default function Art() {
           method: "POST",
           body: JSON.stringify({ id })
         });
+        setIsLoading(true);
         const foundart = await response.json();
+        setIsLoading(false);
         setArts(foundart.foundArt);
         console.log(foundart.foundArt.ImgName);
       } catch (error) {
@@ -27,7 +32,7 @@ export default function Art() {
       }
     };
     find();
-  }, []);
+  }, [router]);
 
   return (
     <div>
@@ -45,19 +50,19 @@ export default function Art() {
         </div>
         <div className="container mx-auto p-4">
           <div className="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-md">
-          <h1 className="text-2xl font-bold mb-2">{arts.ImgCategory}</h1>
-            <h1 className="text-2xl font-bold mb-2">{arts.ImgName}</h1>
-            <p className="text-gray-700">{arts.ImgPrice}</p>
+            <p className="text-2xl font-bold mb-2 text-purple-700">{arts.ImgName}</p>
+          <p className="text font-bold mb-2 text-gray-500">{arts.ImgCategory}</p>
+            <p className="text-xl font-bold text-purple-700">₹{arts.ImgPrice}</p>
 
-            <Link href={`https://wa.me/919019164209?text=Hello,+I+am+interested+in+buying+${encodeURIComponent(arts.ImgName)}.`} passHref>
-                <button className="btn btn-primary mt-4" rel="noopener noreferrer">
-                  Click to Buy
+            <Link href={`https://wa.me/919019164209?text=Hello,+I+am+interested+in+buying+this+art+${encodeURIComponent(arts.ImgName)}.`} passHref>
+                <button className="mt-2 btn btn-wide btn btn-outline btn-info" rel="noopener noreferrer">
+                   Buy
                 </button>
               </Link>
           </div>
         </div>
       </>
-    ) : null}
+    ) : <LoadingSpinner />}
     <Footer />
   </div>
   

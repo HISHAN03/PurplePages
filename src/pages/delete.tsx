@@ -45,6 +45,8 @@ export default function Delet() {
       if (response.ok) {
         setArts((prevArts) => prevArts.filter((art) => art._id !== artId));
         console.log('Art deleted successfully');
+        alert('Art deleted successfully');
+
       } else {
         console.error('Error deleting art:', response.statusText);
       }
