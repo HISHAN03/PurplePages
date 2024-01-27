@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="w-10 h-10 mask mask-squircle">
     <Image src={Img}  alt="logo"/>
   </div>
-        <a className="btn btn-ghost text-xl text-purple-700">PurplePages</a>
+        <a className="btn btn-ghost text-xl text-purple-700 ">PurplePages</a>
       </div>
       <div className="navbar-end">
 

@@ -13,13 +13,13 @@ export default function Add() {
 
   useEffect(() => {
     const enteredPassword = prompt('Enter the password:'); 
-    setIsPasswordCorrect(enteredPassword === '12345');
+    setIsPasswordCorrect(enteredPassword === process.env.NEXT_PUBLIC_MY_PASSWORD);
   }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!isPasswordCorrect) {
-      alert('Incorrect password. Access denied.');
+      console.log('Incorrect password. Access denied.');
       return;
     }
 

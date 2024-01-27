@@ -59,7 +59,7 @@ export default function Card() {
   return (
     <div className="bg-white">
       <div className="mt-10 text-center">
-        <h1 className="btn btn-ghost text-purple-700 text-xl mt-10">ARTS</h1>
+        <h1 className="btn btn-ghost text-purple-700 text-xl mt-10 ">ARTS</h1>
       </div>
       <div className="navbar bg-white text-neutral-content">
         <h1 className="btn btn-ghost text-purple-700 text-xl">{categoryHeading}</h1>

@@ -8,12 +8,11 @@ export default function Delet() {
 
   useEffect(() => {
     const enteredPassword = prompt('Enter the password:');
-    if (enteredPassword === '12345') {
+    if (enteredPassword === process.env.NEXT_PUBLIC_MY_PASSWORD) {
       setIsPasswordCorrect(true);
     } else {
       alert('Incorrect password. Access denied.');
-      // Redirect or handle access denial as needed
-      // router.push('/'); // Uncomment if you want to redirect
+
     }
   }, []);
 
