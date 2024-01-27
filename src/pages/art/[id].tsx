@@ -46,16 +46,17 @@ export default function Art() {
               alt={arts.ImgName}
               className="w-full h-auto rounded-md border border-gray-300 mb-4"
             />
-          </div>
+          </div>  
         </div>
+
         <div className="container mx-auto p-4">
-          <div className="max-w-2xl mx-auto bg-white p-8 shadow-md rounded-md">
+          <div className="max-w-2xl mx-auto bg-dark p-8 shadow-md rounded-md">
             <p className="text-2xl font-bold mb-2 text-purple-700">{arts.ImgName}</p>
           <p className="text font-bold mb-2 text-gray-500">{arts.ImgCategory}</p>
             <p className="text-xl font-bold text-purple-700">₹{arts.ImgPrice}</p>
 
             <Link href={`https://wa.me/919019164209?text=Hello,+I+am+interested+in+buying+this+art+${encodeURIComponent(arts.ImgName)}.`} passHref>
-                <button className="mt-2 btn btn-wide btn btn-outline btn-info" rel="noopener noreferrer">
+                <button className="btn btn-outline   text-purple-700 mt-3" rel="noopener noreferrer">
                    Buy
                 </button>
               </Link>
