@@ -12,7 +12,7 @@ export default function Delet() {
       setIsPasswordCorrect(true);
     } else {
       alert('Incorrect password. Access denied.');
-
+      
     }
   }, []);
 
