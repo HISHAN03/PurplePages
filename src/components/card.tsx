@@ -102,7 +102,7 @@ export default function Card() {
                     <h2 className="card-title text-black text-sm md:text-sm lg:text-base xl:text-lg">
                       {art.ImgName}
                     </h2>
-                    <p>{art.ImgPrice}</p>
+                    <p className="text-purple-500 font-bold text-sm md:text-sm lg:text-base xl:text-lg">₹{art.ImgPrice}</p>
                     <div className="card-actions justify-end">
                       <button
                         className="btn btn-outline btn-purple-700 btn-sm text-purple-700"
